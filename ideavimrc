@@ -1,0 +1,74 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+set cursorline
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+set keep-english-in-normal
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+" <leader>f를 눌러 파일 검색
+nnoremap L $
+
+set timeoutlen=200
+inoremap jj <Esc>
+
+nnoremap <leader>f :action GotoFile<CR>
+
+" <leader>t를 눌러 터미널 열기
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
+
+" 수직 분할
+nnoremap <leader>vs :action SplitVertically<CR>
+
+" 수평 분할
+nnoremap <leader>hs :action SplitHorizontally<CR>
+
+" 분할 창 닫기
+nnoremap <leader>c :action CloseContent<CR>
+
+" 다른 분할 창으로 이동
+nnoremap <leader>w :action NextSplitter<CR>
+
+" 이전 분할 창으로 이동
+nnoremap <leader>W :action PrevSplitter<CR>
+
+" 분할 창 최대화/복원
+nnoremap <leader>m :action MaximizeEditorInSplit<CR>
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+" Insert 모드에서 Ctrl + h, j, k, l로 커서 이동
+inoremap <C-h> <Left>
+
+inoremap <C-j> <Down>
+
+inoremap <C-k> <Up>
+
+inoremap <C-l> <Right>
+
+" Insert 모드에서 Ctrl + w, b로 단어 단위 이동
+inoremap <C-w> <C-o>w
+
+inoremap <C-b> <C-o>b
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
